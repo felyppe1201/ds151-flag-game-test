@@ -6,12 +6,14 @@ import { countries } from '../data/countries';
 // @ts-ignore
 import _ from '../../underscore-esm-min';
 
-import { GameHeader } from '../components/GameHeader';
+import { GameHeader } from '../components/GameHeaderTimer';
 import { FlagQuestion } from '../components/FlagQuestion';
 import { OptionButton } from '../components/OptionButton';
 import { FeedbackScreen } from '../components/FeedbackScreen';
 
 import { GetUser } from '../lib/userService';
+import { useCronometro } from '../hooks/useCronometro';
+
 
 interface Country {
   name: string;
@@ -39,7 +41,7 @@ const GameScreen = () => {
   async function enviarDados(dados: scoreAtual | null) {
     try {
       if(dados != null){
-        const resposta = await fetch('http://localhost:3000/scores', {
+        const resposta = await fetch('http://localhost:3000/timedscores', {
           method: 'POST', 
           headers: {
             'Content-Type': 'application/json', 
@@ -63,10 +65,13 @@ const GameScreen = () => {
   }
 
   const nextStep = () => {
-    if (step > 10) setStatus('end');
-    else setStatus('question');
+    setStatus('question');
     setChosenOption(-1);
   }
+
+  const tempoRestante = useCronometro(30, () => {
+    setStatus('end');
+  });
 
   useEffect(() => {
     if (username != null) {
@@ -144,7 +149,7 @@ const GameScreen = () => {
     <SafeAreaView style={styles.container}>
       <GameHeader 
         onClose={() => router.replace('/')}
-        step={step}
+        timer={tempoRestante}
         points={scoreAtualr?.score | 0}
       />
       

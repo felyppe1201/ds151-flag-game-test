@@ -26,6 +26,25 @@ const HomeScreen = () => {
               params: { username: username }
             });
           }}
+        /><Button 
+          title="Iniciar"
+          color="rgb(163, 5, 0)"
+          disabled={username === ''}
+          onPress={() => {
+            router.push({
+              pathname: '/gametimer',
+              params: { username: username }
+            });
+          }}
+        />
+        <Button 
+          title="Placar"
+          color="rgb(0, 135, 202)"
+          onPress={() => {
+            router.push({
+              pathname: '/placar'
+            });
+          }}
         />
       </View>
     </View>
@@ -46,7 +65,10 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   container_name: {
+    display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
+    gap: '10px',
   },
   labelName: {
     fontSize: 30,

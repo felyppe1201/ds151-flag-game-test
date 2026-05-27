@@ -1,0 +1,36 @@
+{
+  "scores": [
+    {
+      "score": 7,
+      "id": "8dsyeev3rBg"
+    },
+    {
+      "name": "flyp",
+      "score": 5,
+      "id": "TuGA32BlFg0"
+    }
+  ],
+  "timedscores": [
+    {
+      "name": "Felyppe",
+      "score": 4,
+      "id": "rALq14pIoW0"
+    },
+    {
+      "name": "jao",
+      "score": 4,
+      "id": "5jpefXJTLZk"
+    },
+    {
+      "name": "jao",
+      "score": 0,
+      "id": "5ZrwCqOCTtw"
+    },
+    {
+      "name": "jao",
+      "score": 0,
+      "id": "jHbk2fdqZlg"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

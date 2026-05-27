@@ -21,6 +21,17 @@ export default function Layout() {
             title: 'Jogo',
           }}
         />
+        <Stack.Screen
+          name="gametimer"
+          options={{
+            title: 'Jogo temporizado',
+          }}
+        />
+        <Stack.Screen
+        name="placar"
+        options={{
+            title: 'Leaderboard',
+          }}/>
       </Stack>
     </SafeAreaProvider>
   );
