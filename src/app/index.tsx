@@ -17,7 +17,7 @@ const HomeScreen = () => {
           onChangeText={(t) => setUsername(t)}
         />
         <Button 
-          title="Iniciar"
+          title="Iniciar | Jogo normal (NOOB)"
           color="#0a0"
           disabled={username === ''}
           onPress={() => {
@@ -27,7 +27,7 @@ const HomeScreen = () => {
             });
           }}
         /><Button 
-          title="Iniciar"
+          title="Iniciar | Jogo temporizado (HARD)"
           color="rgb(163, 5, 0)"
           disabled={username === ''}
           onPress={() => {
